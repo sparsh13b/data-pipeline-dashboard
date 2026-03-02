@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Data Pipeline Dashboard - Business analytics and insights">
+    <title>Data Pipeline Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+    <header class="header">
+        <div>
+            <h1>📊 Data Pipeline Dashboard</h1>
+            <span class="subtitle">Business analytics from processed pipeline data</span>
+        </div>
+    </header>
+
+    <main class="dashboard">
+
+        <!-- revenue trend chart -->
+        <div class="card full-width" id="revenue-section">
+            <div class="card-title">
+                <span>📈 Monthly Revenue Trend</span>
+                <div class="filters">
+                    <label>From</label>
+                    <input type="month" id="date-from">
+                    <label>To</label>
+                    <input type="month" id="date-to">
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="revenue-chart"></canvas>
+            </div>
+            <div class="loading" id="revenue-loading">
+                <div class="spinner"></div> Loading revenue data...
+            </div>
+            <div class="error-msg" id="revenue-error" style="display:none;">
+                <p>Failed to load revenue data</p>
+                <button class="retry-btn" onclick="loadRevenue()">Retry</button>
+            </div>
+        </div>
+
+        <!-- top customers table -->
+        <div class="card full-width" id="customers-section">
+            <div class="card-title">
+                <span>🏆 Top Customers</span>
+                <input type="text" class="search-box" id="customer-search"
+                       placeholder="Search by name or region...">
+            </div>
+            <div class="table-wrapper">
+                <table id="customers-table">
+                    <thead>
+                        <tr>
+                            <th data-col="name">Name <span class="sort-arrow">▲</span></th>
+                            <th data-col="region">Region <span class="sort-arrow">▲</span></th>
+                            <th data-col="total_spend">Total Spend <span class="sort-arrow">▲</span></th>
+                            <th data-col="churned">Status <span class="sort-arrow">▲</span></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="loading" id="customers-loading">
+                <div class="spinner"></div> Loading customer data...
+            </div>
+            <div class="error-msg" id="customers-error" style="display:none;">
+                <p>Failed to load customer data</p>
+                <button class="retry-btn" onclick="loadTopCustomers()">Retry</button>
+            </div>
+        </div>
+
+        <!-- category breakdown -->
+        <div class="card" id="category-section">
+            <div class="card-title">
+                <span>📦 Category Breakdown</span>
+            </div>
+            <div class="chart-container">
+                <canvas id="category-chart"></canvas>
+            </div>
+            <div class="loading" id="category-loading">
+                <div class="spinner"></div> Loading...
+            </div>
+            <div class="error-msg" id="category-error" style="display:none;">
+                <p>Failed to load category data</p>
+                <button class="retry-btn" onclick="loadCategories()">Retry</button>
+            </div>
+        </div>
+
+        <!-- region summary -->
+        <div class="card" id="region-section">
+            <div class="card-title">
+                <span>🌍 Region Summary</span>
+            </div>
+            <div class="region-grid" id="region-grid"></div>
+            <div class="loading" id="region-loading">
+                <div class="spinner"></div> Loading...
+            </div>
+            <div class="error-msg" id="region-error" style="display:none;">
+                <p>Failed to load region data</p>
+                <button class="retry-btn" onclick="loadRegions()">Retry</button>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

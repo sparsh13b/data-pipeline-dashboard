@@ -1,0 +1,11 @@
+customer_id,name,region,total_spend,churned
+C0028,Pooja Martin,Unknown,6719.650000000001,True
+C0079,Victor Garcia,North,5518.75,False
+C0031,Zach Jones,North,5204.73,True
+C0110,Zach Rodriguez,West,5059.099999999999,True
+C0153,Charlie Jackson,West,5052.11,True
+C0100,Arun Johnson,South,5052.099999999999,True
+C0138,Tina Das,Central,4606.47,True
+C0073,Arun Martin,West,4064.7,True
+C0052,Grace Gupta,Central,3997.88,False
+C0048,Sam Miller,West,3473.24,True

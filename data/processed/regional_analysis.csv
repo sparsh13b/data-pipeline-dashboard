@@ -1,0 +1,7 @@
+region,num_customers,num_orders,total_revenue,avg_revenue_per_customer
+Central,20,38,17221.76,861.09
+East,16,31,6628.58,414.29
+North,23,49,17302.76,752.29
+South,29,60,20290.165,699.66
+Unknown,14,25,12561.64,897.26
+West,34,64,34822.78,1024.2

@@ -1,0 +1,26 @@
+product_id,product_name,category,unit_price
+P001,Laptop,Electronics,999.99
+P002,Wireless Mouse,Electronics,29.99
+P003,Keyboard,Electronics,79.99
+P004,Monitor,Electronics,349.99
+P005,USB Cable,Accessories,9.99
+P006,Phone Case,Accessories,19.99
+P007,Headphones,Audio,149.99
+P008,Bluetooth Speaker,Audio,89.99
+P009,Webcam,Electronics,69.99
+P010,Desk Lamp,Home Office,39.99
+P011,Chair Mat,Home Office,49.99
+P012,Notebook,Stationery,5.99
+P013,Pen Set,Stationery,12.99
+P014,Backpack,Accessories,59.99
+P015,External SSD,Electronics,119.99
+P016,HDMI Cable,Accessories,14.99
+P017,Mouse Pad,Accessories,11.99
+P018,Standing Desk,Home Office,499.99
+P019,Earbuds,Audio,59.99
+P020,Power Bank,Electronics,34.99
+P021,Tablet Stand,Accessories,24.99
+P022,Whiteboard,Home Office,44.99
+P023,Marker Set,Stationery,8.99
+P024,Surge Protector,Electronics,27.99
+P025,Cable Organizer,Accessories,15.99

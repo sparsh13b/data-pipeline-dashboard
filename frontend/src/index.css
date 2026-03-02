@@ -1,9 +1,4 @@
-/* 
-  style.css
-  dashboard styles - compact dark theme
-*/
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* index.css - global styles for the dashboard */
 
 * {
     margin: 0;
@@ -26,8 +21,7 @@ body {
     font-size: 13px;
 }
 
-/* -- header -- */
-
+/* header */
 .header {
     background: #161b22;
     border-bottom: 1px solid #30363d;
@@ -46,8 +40,7 @@ body {
     font-size: 11px;
 }
 
-/* -- main layout -- */
-
+/* dashboard grid */
 .dashboard {
     max-width: 1100px;
     margin: 0 auto;
@@ -69,33 +62,26 @@ body {
     grid-column: 1 / -1;
 }
 
-.card-title {
-    font-size: 13px;
-    font-weight: 600;
-    color: #f0f6fc;
-    margin-bottom: 10px;
+.card-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 12px;
     gap: 10px;
     flex-wrap: wrap;
 }
 
-/* -- charts -- */
-
-.chart-container {
-    position: relative;
-    width: 100%;
-    height: 220px;
+.card-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #f0f6fc;
 }
 
-/* -- filters -- */
-
+/* filters */
 .filters {
     display: flex;
     gap: 6px;
     align-items: center;
-    flex-wrap: wrap;
 }
 
 .filters label {
@@ -103,7 +89,7 @@ body {
     color: #8b949e;
 }
 
-.filters input[type="month"] {
+.filter-input {
     background: #0d1117;
     border: 1px solid #30363d;
     color: #e1e4e8;
@@ -114,7 +100,7 @@ body {
     width: 120px;
 }
 
-.filters input:focus {
+.filter-input:focus {
     outline: none;
     border-color: #58a6ff;
 }
@@ -135,8 +121,7 @@ body {
     border-color: #58a6ff;
 }
 
-/* -- tables -- */
-
+/* table */
 .table-wrapper {
     overflow-x: auto;
     max-height: 260px;
@@ -167,13 +152,13 @@ thead th:hover {
     color: #f0f6fc;
 }
 
-thead th .sort-arrow {
+.sort-arrow {
     margin-left: 3px;
     font-size: 9px;
     opacity: 0.5;
 }
 
-thead th.active .sort-arrow {
+th.active .sort-arrow {
     opacity: 1;
     color: #58a6ff;
 }
@@ -188,8 +173,7 @@ tbody tr:hover {
     background: #1c2128;
 }
 
-/* -- badges -- */
-
+/* badges */
 .badge {
     display: inline-block;
     padding: 1px 7px;
@@ -208,8 +192,7 @@ tbody tr:hover {
     color: #3fb950;
 }
 
-/* -- region cards -- */
-
+/* region cards */
 .region-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -243,8 +226,7 @@ tbody tr:hover {
     font-weight: 500;
 }
 
-/* -- loading & error -- */
-
+/* loading & error */
 .loading {
     display: flex;
     align-items: center;
@@ -277,7 +259,7 @@ tbody tr:hover {
     font-size: 12px;
 }
 
-.error-msg .retry-btn {
+.retry-btn {
     margin-top: 8px;
     background: #21262d;
     border: 1px solid #30363d;
@@ -288,21 +270,16 @@ tbody tr:hover {
     font-size: 11px;
 }
 
-.error-msg .retry-btn:hover {
+.retry-btn:hover {
     background: #30363d;
 }
 
-/* -- responsive -- */
-
+/* responsive */
 @media (max-width: 768px) {
     .dashboard {
         grid-template-columns: 1fr;
         padding: 10px;
         gap: 10px;
-    }
-
-    .chart-container {
-        height: 180px;
     }
 
     .search-box {

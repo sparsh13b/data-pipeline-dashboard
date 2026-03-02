@@ -10,7 +10,7 @@ import TopCustomers from './components/TopCustomers'
 import CategoryChart from './components/CategoryChart'
 import RegionSummary from './components/RegionSummary'
 
-const API_BASE = "http://localhost:8000"
+const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:8000"
 
 // helper to fetch from our api
 async function fetchData(endpoint) {

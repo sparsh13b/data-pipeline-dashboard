@@ -1,6 +1,6 @@
 # Data Pipeline & Dashboard
 
-A self-contained data pipeline project that ingests raw CSVs, cleans and transforms the data, runs analysis, and serves results through an interactive web dashboard.
+A self-contained data pipeline project that ingests raw CSVs, cleans and transforms the data, runs analysis, and serves results through an interactive React dashboard.
 
 ## Project Structure
 
@@ -12,10 +12,19 @@ data-pipeline-dashboard/
 ├── backend/
 │   ├── app.py                # FastAPI REST API
 │   └── requirements.txt      # python dependencies
-├── frontend/
-│   ├── index.html            # dashboard page
-│   ├── style.css             # styles
-│   └── app.js                # chart rendering & api calls
+├── frontend/                 # React + Vite dashboard
+│   ├── src/
+│   │   ├── main.jsx          # entry point
+│   │   ├── App.jsx           # main dashboard component
+│   │   ├── index.css         # global styles
+│   │   └── components/
+│   │       ├── RevenueChart.jsx
+│   │       ├── TopCustomers.jsx
+│   │       ├── CategoryChart.jsx
+│   │       └── RegionSummary.jsx
+│   ├── index.html
+│   ├── vite.config.js
+│   └── package.json
 ├── data/
 │   ├── raw/                  # original CSVs
 │   └── processed/            # cleaned & analysis output CSVs
@@ -27,11 +36,12 @@ data-pipeline-dashboard/
 ## Prerequisites
 
 - Python 3.9+
-- pip
+- Node.js 18+
+- pip, npm
 
 ## Setup & Running
 
-### 1. Install dependencies
+### 1. Install Python dependencies
 
 ```bash
 pip install pandas numpy fastapi uvicorn pytest
@@ -89,13 +99,12 @@ API endpoints:
 - `GET /api/categories` — category performance
 - `GET /api/regions` — regional analysis
 
-### 6. Open the frontend dashboard
-
-While the backend is running, serve the frontend:
+### 6. Start the frontend dashboard
 
 ```bash
 cd frontend
-python -m http.server 5500
+npm install
+npm run dev
 ```
 
 Open `http://localhost:5500` in your browser.
@@ -106,6 +115,13 @@ Open `http://localhost:5500` in your browser.
 python -m pytest tests/ -v
 ```
 
+## Dashboard Features
+
+- **Revenue Trend** — Recharts area chart with date-range filter (bonus)
+- **Top Customers** — sortable table with search box (bonus)
+- **Category Breakdown** — bar chart of revenue by category
+- **Region Summary** — card-based KPI view
+
 ## Assumptions
 
 - Sample data is generated with a fixed random seed (42) for reproducibility.
@@ -113,11 +129,10 @@ python -m pytest tests/ -v
 - Status normalization maps common variants (e.g., "done" → "completed", "canceled" → "cancelled"). Unrecognized statuses are kept as-is.
 - For the multi-format date parser, when a date like "03-05-2024" is ambiguous, it's parsed as MM-DD-YYYY per the assignment spec.
 - Missing `amount` values are filled with the median amount grouped by product; if a product has no valid amounts, the overall median is used.
-- The frontend uses Chart.js loaded from CDN — requires internet connection.
 
 ## Tech Stack
 
 - **Data processing**: Python, pandas, numpy
 - **Backend**: FastAPI, uvicorn
-- **Frontend**: Vanilla HTML/CSS/JS, Chart.js
+- **Frontend**: React, Vite, Recharts
 - **Testing**: pytest
